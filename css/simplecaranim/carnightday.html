@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            background-color: lightblue;
+            height: 600px;
+            justify-content: end;
+            animation:bg-color-change 10s linear 1s infinite alternate-reverse;
+        }
+        .stars_area{
+            /* background-color: pink; */
+            height:200px;
+            display: grid;
+            grid-template-columns: repeat(5,100px);
+            grid-template-rows: repeat(3,70px);
+            justify-content: space-around;
+            /* visibility: hidden; */
+            animation:star-vis-change 10s ease-in-out 1s infinite normal;
+        }
+        .starpic{
+            background-color: black;
+            background-image: url("star3.jpg");
+            height:20px;
+            width:20px;
+            align-self: center;
+            justify-self: center;
+            background-size: contain;
+        }
+        #star7{
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+        #star10{
+            grid-column-start: 2;
+            grid-column-end:4;
+        }
+        .car{
+            transform: translateY(40px);
+        }
+        .chasis{
+            background-color: yellow;
+            height:150px;
+            width: 350px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10%;
+            animation: chasis_move 10s ease-in-out 1s infinite alternate-reverse;
+        }
+        .windows{
+            background-color: cyan;
+            height:80px;
+            width: 80px;
+            border: 2px solid black;
+            animation:w-color-change 10s ease-in-out 1s infinite alternate-reverse;
+        }
+        #wheel1{
+            background-color: black;
+            height:50px;
+            width:50px;
+            display: inline-block;
+            margin-left: 2px;
+            border-radius: 100%;
+            animation: wheel_move 10s ease-in-out 1s infinite alternate-reverse;
+        }
+        #wheel1img{
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            background-image: url('wheel2.png');
+            background-size: cover;
+            animation: wheel_rot 10s ease-in-out 1s infinite alternate-reverse;
+        }
+        #wheel2{
+            background-color: black;
+            height:50px;
+            width:50px;
+            display: inline-block;
+            margin-left:236px;
+            border-radius: 100%;
+            animation: wheel_move 10s ease-in-out 1s infinite alternate-reverse;
+        }
+        #wheel2img{
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            background-image: url('wheel2.png');
+            background-size: cover;    
+            animation: wheel_rot 10s ease-in-out 1s infinite alternate-reverse;
+        }
+        .road{
+            background-color: rgb(172, 129, 67);
+            height:200px;
+            transform: rotateX(48deg);
+            border:5px solid brown;
+            border-left:0;
+            border-right:0;
+            display: flex;
+            justify-content: space-between;
+            align-items:center ;
+        }
+        .roadmarkings{
+            background-color: white;
+            height:30px;
+            width: 60px;
+            animation: roadmarkings_mov 10s ease-in-out 1s infinite alternate-reverse;
+        }
+        @keyframes chasis_move{
+            from{
+
+            }
+            to{
+                transform: translateX(77vw);
+            }
+        }
+        @keyframes wheel_move{
+            from{
+
+            }
+            to{
+                transform: translateX(77vw);
+            }
+        }
+        @keyframes wheel_rot {
+            from{
+
+            }
+            to{
+                transform:rotate(360deg);
+            }
+        }
+        @keyframes w-color-change {
+            from{
+
+            }
+            50%{
+                background-color: rgb(89, 87, 87);
+            }   
+        }
+        @keyframes bg-color-change {
+            from{
+            }
+            50%{
+                background-color: rgb(45, 45, 45);
+            }   
+        }
+        @keyframes star-vis-change {
+            from{
+                opacity: 0;
+                
+            }
+            50%{
+                opacity:1;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity:0;
+            }
+        }
+        @keyframes roadmarkings_mov{
+            from{
+
+            }
+            to{
+                transform: translateX(-20vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stars_area">
+            <div id="star1" class="starpic"></div>
+            <div id="star2" class="starpic"></div>
+            <div id="star3" class="starpic"></div>
+            <div id="star4" class="starpic"></div>
+            <div id="star5" class="starpic"></div>
+            <div id="star6" class="starpic"></div>
+            <div id="star7" class="starpic"></div>
+            <div id="star8" class="starpic"></div>
+            <div id="star9" class="starpic"></div>
+            <div id="star10" class="starpic"></div>
+            <div id="star11" class="starpic"></div>
+            <div id="star12" class="starpic"></div>
+        </div>
+        <div class="car">
+            <div class="chasis">
+                <div class="windows" id="w1"></div>
+                <div class="windows" id="w2"></div>
+            </div>
+                <div id="wheel1">
+                    <div id="wheel1img"></div>
+                </div>
+                <div id="wheel2">
+                    <div id="wheel2img"></div>
+                </div>
+            
+        </div>
+        <div class="road">
+            <div class="roadmarkings"></div>
+            <div class="roadmarkings"></div>
+            <div class="roadmarkings"></div>
+            <div class="roadmarkings"></div>
+        </div>
+    </div>
+</body>
+</html>
