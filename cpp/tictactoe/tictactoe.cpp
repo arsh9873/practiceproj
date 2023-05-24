@@ -1,3 +1,4 @@
+//simple 2 player implementation
 #include <bits/stdc++.h>
 using namespace std;
 class game{
